@@ -1,5 +1,10 @@
 package def;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -39,9 +44,21 @@ public class Start{
 //        frame.add(barPlot);
 //        barPlot.plot();
         
+        JPanel panel = new JPanel();
+        JButton OKButton = new JButton("Run");
+        OKButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	Source.getInstance().generateData();
+            }
+        });
+        OKButton.setBounds(10, 11, 110, 23);
+        panel.add(OKButton,BorderLayout.CENTER);
+        frame.getContentPane().add(panel);
+        
+        
         Source.getInstance().addObserver(dot);
         Source.getInstance().addObserver(markedPlot);
-//        Source.getInstance().addObserver(barPlot);
+//      Source.getInstance().addObserver(barPlot);
         
         try {
 			Thread.sleep(1000);
@@ -50,7 +67,10 @@ public class Start{
 			e.printStackTrace();
 		}
         
-        Source.getInstance().generateData();
+        //Source.getInstance().generateData();
         System.out.println("ENDDD");
+	}
+	public void MyAction() {
+		
 	}
 }
