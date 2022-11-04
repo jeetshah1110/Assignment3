@@ -1,9 +1,33 @@
 package def;
 
-public class Decorator implements Top {
+import java.util.Observable;
+
+import javax.swing.JPanel;
+
+public class Decorator extends JPanel implements Top{
 	private Top top;
 	@Override
 	public void plot() {
-		top.plot();
+		if(top!=null)
+		{
+			System.out.println("APOORV");
+			top.plot();
+		}
+		else
+		{
+			System.out.println("Super does not exist");
+		}
  	}
+	void addPlot(Top top)
+	{
+		this.top = top;
+	}
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		if(top!=null)
+		{
+			top.update(o, arg);
+		}
+	}
 }

@@ -1,6 +1,7 @@
 package def;
+import java.util.Observable;
 import java.util.Random;
-public class Source {
+public class Source extends Observable{
 	private static Source src;
 	private int [] arr;
 	private int average;
@@ -16,6 +17,8 @@ public class Source {
 	     }
 	     Evaluator e= Evaluator.getInstance();
 	     average = e.Evaluate(arr);
+	     setChanged();
+	     notifyObservers();
 	}
 	public static Source getInstance() {
 		if(src==null) {
