@@ -25,10 +25,11 @@ public class SimplePlot extends JPanel implements Top{
 		repaint();
 	}
 	
-    protected void paintComponent(Graphics grf){  
+    protected void paintComponent(Graphics grf){
+    	super.paintComponent(grf);
     	System.out.println("Simple component paint component");
         //create instance of the Graphics to use its methods  
-        //super.paintComponent(grf);  
+        //;  
         Graphics2D graph = (Graphics2D)grf;  
           
         //Sets the value of a single preference for the rendering algorithms.  
@@ -91,11 +92,6 @@ public class SimplePlot extends JPanel implements Top{
             int x2 = (int)(marg+(i+1)*x);
             int y2 = (int)(height-marg-scale*cord[i+1]);
             graph.setColor(GRAPH_POINT_COLOR);
-
-//            // only for second kind of graph
-//            
-//            graph.fill(new Ellipse2D.Double(x1-2, y1-2, 8, 8));
-//            graph.setColor(GRAPH_COLOR);
 
             graph.drawLine((int)x1, (int)y1, (int)x2, (int)y2);
         } 

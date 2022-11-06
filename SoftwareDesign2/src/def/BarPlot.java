@@ -16,11 +16,13 @@ public class BarPlot extends Decorator{
 	
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
-		repaint();
-		super.update(o,arg);
+//		repaint();
+//		super.update(o,arg);
+		plot();
 	}
 	protected void paintComponent(Graphics grf){
-		
+		//super.paintComponent(grf);  
+		//super.plot();
         Graphics2D graph = (Graphics2D)grf;  
         int width = getWidth();  
         int height = getHeight();
@@ -35,7 +37,8 @@ public class BarPlot extends Decorator{
             int x2 = x1;
             int y2 = getHeight() - BORDER_GAP;
             graph.setColor(GRAPH_COLOR);
-            graph.drawLine((int)x1, (int)y1, (int)x2, (int)y2);
+            //graph.drawLine((int)x1, (int)y1, (int)x2, (int)y2);
+            graph.fillRect(x1-2, y1+4,8,y2-y1);
         } 
 	}
 	

@@ -10,7 +10,7 @@ public interface Top extends Observer{
 	  static final int MAX_SCORE = 20;
 	  static final int PREF_W = 800;
 	  static final int PREF_H = 650;
-	  static final int BORDER_GAP = 15;
+	  static final int BORDER_GAP = 30;
 	  static final Color GRAPH_COLOR = Color.green;
 	  static final Color GRAPH_POINT_COLOR = new Color(150, 50, 50, 180);
 	  static final Stroke GRAPH_STROKE = new BasicStroke(3f);

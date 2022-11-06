@@ -19,11 +19,11 @@ public class MarkedPlot extends Decorator{
 		// TODO Auto-generated method stub
 		
 		System.out.println("Jeet");
-		super.update(o, arg);
-		repaint();
+		plot();
 	}	
 	protected void paintComponent(Graphics grf){
-		
+		//super.paintComponent(grf);
+		//super.plot();
 		System.out.println("MarkedPlot called");
         Graphics2D graph = (Graphics2D)grf;  
         int width = getWidth();  
@@ -33,12 +33,13 @@ public class MarkedPlot extends Decorator{
 
         //Sets the value of a single preference for the rendering algorithms.  
         graph.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        for(int i=0; i<cord.length-1; i++){  
+        for(int i=0; i<cord.length; i++){  
             int x1 = (int)(marg+i*x);  
             int y1 = (int)(height-marg-scale*cord[i]);  
             graph.setColor(GRAPH_POINT_COLOR);
 
-            graph.fill(new Ellipse2D.Double(x1-2, y1-2, 8, 8));
+            //graph.fill(new Ellipse2D.Double(x1-2, y1-2, 8, 8));
+            graph.fillRect(x1-2, y1-2, 8, 8);
         } 
 	}
 	

@@ -10,7 +10,6 @@ public class Decorator extends JPanel implements Top{
 	public void plot() {
 		if(top!=null)
 		{
-			System.out.println("APOORV");
 			top.plot();
 		}
 		else
